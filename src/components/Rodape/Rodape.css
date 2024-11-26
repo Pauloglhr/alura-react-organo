@@ -1,0 +1,29 @@
+.footer {
+    background-color: #6278F7;
+    background-image: url('/public/assets/fundo.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 128px;
+}
+
+.footer div{
+    display: flex;
+    gap: 32px;
+}
+
+.footer div > img {
+    max-height: 1.5rem;
+}
+
+.footer img{
+    max-height: 40%;
+}
+
+.footer h6{
+    color: white;
+    font-weight: normal;
+    font-size: 20px;
+}
