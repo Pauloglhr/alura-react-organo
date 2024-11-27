@@ -48,7 +48,6 @@ function App() {
   ]
 
   const aoNovoColaboradorCadastrado = (colaborador)=>{
-    console.log(colaborador);
     setColaboradores([...colaboradores, colaborador]);
   }
 
