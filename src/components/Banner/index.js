@@ -6,7 +6,6 @@ const Banner = () => {
             <header className="banner">
                 <img src="/assets/banner.png" alt="Banner principal da página Organo."></img>
             </header>
-            <h1>Titulo</h1>
         </>
     )
 }
