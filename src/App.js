@@ -9,43 +9,36 @@ function App() {
 
   const [colaboradores, setColaboradores] = useState([]);
 
-  const times = [
+  const [times, setTimes] = useState([
     {
       nome: 'Programação',
-      corPrimaria: '#57c278',
-      corSecundaria: '#d9f7e9'
+      cor: '#57c278',
     },
     {
       nome: 'Front-End',
-      corPrimaria: '#82cffa',
-      corSecundaria: '#e8f8ff'
+      cor: '#82cffa',
     },
     {
       nome: 'Data Science',
-      corPrimaria: '#a6d157',
-      corSecundaria: '#f0f8e2'
+      cor: '#a6d157',
     },
     {
       nome: 'Devops',
-      corPrimaria: '#e06b69',
-      corSecundaria: '#fde7e8'
+      cor: '#e06b69',
     },
     {
       nome: 'UX e Design',
-      corPrimaria: '#db6ebf',
-      corSecundaria: '#fae8f5'
+      cor: '#db6ebf',
     },
     {
       nome: 'Mobile',
-      corPrimaria: '#ffba05',
-      corSecundaria: '#fff5d9'
+      cor: '#ffba05',
     },
     {
       nome: 'Inovação e Gestão',
-      corPrimaria: '#ff8a29',
-      corSecundaria: '#ffeedf'
+      cor: '#ff8a29',
     }
-  ]
+  ]);
 
   const aoNovoColaboradorCadastrado = (colaborador)=>{
     setColaboradores([...colaboradores, colaborador]);
@@ -55,12 +48,22 @@ function App() {
     console.log('deletando colaborador...');
   }
 
+  const aoMudarDeCor = (cor, nome) => {
+    setTimes(times.map(time => {
+      if (time.nome === nome) {
+        time.cor = cor;
+      }
+      return time;
+    }))
+  }
+
   return (
     <div className="App">
       <Banner />
       <Formulario times={times.map(time => time.nome)} aoColaboradorCadastrado={colaborador => aoNovoColaboradorCadastrado(colaborador)}/>
       {times.map(time => 
         <Time 
+          mudarCor={aoMudarDeCor}
           key={time.nome}
           time={time}
           colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)}
