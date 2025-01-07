@@ -11,6 +11,7 @@ const Formulario = (props) => {
         evento.preventDefault();
         props.aoColaboradorCadastrado({
             id: uuidv4(),
+            favorito: false,
             nome,
             cargo,
             imagem,
@@ -78,7 +79,8 @@ const Formulario = (props) => {
                     label="Nome" 
                     placeholder="Digite o nome do time"
                 />
-                <Inputs 
+                <Inputs
+                    type='color' 
                     aoAlterado={valor => setCorTime(valor)}
                     valor={corTime}
                     obrigatorio={true} 
